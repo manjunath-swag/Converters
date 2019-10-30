@@ -1,0 +1,93 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+int main()
+{
+    int choice;
+    float min,hr;
+    float hour,minutes;
+    printf("Yehh!I finished week1\n");
+    printf("starting a new journey\n");
+    printf("Hello welcome to my converter\n");
+    while(1)
+{
+    printf("1.Press 1 for min to hour\n2.press 2 for hour to min\n3.Press 3 to count the no of calories consumed\n4.Press 4 to know your BMI index\n ");
+    scanf("%d",&choice);
+    if(choice==1)
+    {
+        printf("enter the minutes you want to convert\n");
+        scanf("%f",&min);
+        hour=min/60;
+        printf("Minutes in hour is %f\n\n",hour);
+    }
+    if(choice==2)
+    {
+        printf("Enter the hours digit you want to convert\n");
+        scanf("%f",&hr);
+        minutes=hr*60;
+        printf("Hours in minutes is %f\n\n",minutes);
+    }
+    if(choice==3)
+    {
+      int cups,d;
+      float calories,cal2,total;
+      printf("Enter the number of ragi cups you had today\n");
+      scanf("%d",&cups);
+      calories=cups*336;
+      printf("Total calories earned today from ragi is %f\n\n",calories);
+      printf("Enter the cups of rice you had\n");
+      scanf("%d",&d);
+      cal2=d*230;
+      printf("Total calories earned today from rice is %f\n\n",cal2);
+      total = cal2+calories;
+      if(total>550)
+      {
+        printf("You are obese, eat LESS\n\n");
+      }
+      else
+      {
+        printf("You're perfect, you can eat more\n\n");
+      }
+    }
+    if(choice==4)
+    {
+      int age;
+      float wt,ht,BMI,temp;
+      char g,m,f;
+      printf("Enter your age\n");
+      scanf("%d",&age);
+      printf("Enter your weight in kg's\n");
+      scanf("%f",&wt);
+      printf("Enter your height in centimetres\n");
+      scanf("%f",&ht);
+      printf("Enter your gender: Press m for male or f for female\n");
+      scanf("%s",&g);
+      ht=ht*0.01;
+      BMI=wt/(ht*ht);
+      printf("You're BMI is %f\n",BMI);
+      if(g==m)
+      {
+            if(BMI>18.5&&BMI<22.9)
+            printf("Your BMI is normal, You're not fat\n");
+            else if(BMI<18.5)
+            printf("You're BMI is less, Eat more\n");
+            else if(BMI>23&&BMI<24.9)
+            printf("You're BMI is high,Eat less\n");
+            else
+            printf("You're BMI is very high,You're in danger zone\n");
+      }
+        else
+       {
+            if(BMI>18.5&&BMI<25)
+            printf("Your BMI is normal, You're not fat\n");
+            else if(BMI<18.5)
+            printf("You're BMI is less, Eat more\n");
+            else if(BMI>25&&BMI<30)
+            printf("You're BMI is high,Eat less\n");
+            else
+            printf("You're BMI is very high,You're in danger zone\n");
+
+        }
+      }
+    }
+  }
